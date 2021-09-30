@@ -3,8 +3,9 @@ CMPS 2200  Recitation 1
 """
 
 ### the only imports needed are here
-import tabulate
+
 import time
+import tabulate
 ###
 
 def linear_search(mylist, key):
@@ -41,7 +42,7 @@ def _binary_search(mylist, key, left, right):
 	if key == mylist[middle]:
 		return middle
 
-	if left == right:
+	if left > right:
 		return -1
 
 	if key > mylist[middle]:
@@ -104,7 +105,7 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	"""
 	tupleList = []
 	for i in range(len(sizes)):
-		n = sizes[i]
+		n = int(sizes[i])
 		inputlist = []
 		for x in range(n):
 			inputlist.append(x)
